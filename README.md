@@ -64,7 +64,10 @@ axis representing the number of neurons in the first hidden layer, the Y axis re
 number of hidden neurons in the second layer and the Z axis representing either accuracy or loss.
 The batch size was set to 5 with 5 epochs of training.
 The following figures show the results of training.
-![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_acc_big.png)![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_loss_big.png)
+<p float="left">
+  <img src="https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_acc_big.png" width="100" />
+  <img src="https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_loss_big.png" width="100" /> 
+</p>
 As can be observed in Fig1. the training accuracy increases exponentially with small numbers of
 neurons and then plateaus as we reach the a number as high as the number of input neurons.
 In the same fashion we can observe that the training losses decrease with an increase in hidden
