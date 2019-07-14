@@ -36,6 +36,7 @@ features from the classes into their respective arrays. Once separated, they wer
 training set and testing set, with 20% of the original data being allocated for testing.
 Lastly, the features were normalized, using sklearn.preprocessing StandardScaler.
 After all of this preprocessing we end up with a dataset that look like this.
+
 ![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/dataset.PNG)
 
 ## Creating the neural network model
@@ -51,7 +52,7 @@ Another densely connected layer has been added to represent the output of the ne
 has one node which will represent the probability of arrhythmia. The closer the value is to “0”,
 the more likely the patient is healthy, the closer it is to “1” the more likely the patient has some
 underlying heart problems.
-The [Adagrad optimize]() was used as well as the [Binary Cross Entropy]() loss fucntion.
+The [Adagrad optimize](https://www.wikipedia.com/en/Stochastic_gradient_descent#/AdaGrad) was used as well as the [Binary Cross Entropy](https://peltarion.com/knowledge-center/documentation/modeling-view/build-an-ai-model/loss-functions/binary-crossentropy) loss fucntion.
 
 ## Training the neural network
 Note that the number of hidden neurons has not been specified so far, this is due to the fact that this project
@@ -81,7 +82,9 @@ The testing of these models can be seen in the next figure.
 The following is the generated log for the final model with 262 input neurons, 300 neurons in the
 first hidden layer, 220 neurons in the second hidden layer and one output, batch size of 32,
 epoch count 10.
+
 ![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/data.PNG)!
+
 The final result for this run was a test accuracy of 74% with 99% training accuracy.
 The final 4 lines in the log represent some random predictions from the test data, on the left side
 having the real solution answers and the right being the model predictions.
