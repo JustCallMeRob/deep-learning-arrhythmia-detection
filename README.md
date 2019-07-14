@@ -2,9 +2,9 @@
 
 ## Project Description
 This project focuses on the training of deep neural networks for the detection of arrhythmia from datasets 
-containing parameters of (QRS complexes)[https://en.wikipedia.org/wiki/QRS_complex] taken from electrocardiograms 
+containing parameters of [QRS complexes](https://en.wikipedia.org/wiki/QRS_complex) taken from electrocardiograms 
 probes from various healthy and unhealthy individuals.
-The dataset is called (Arrhythmia Data Set)[https://bigml.com/dashboard/dataset/5c4c9b9500a1e5464c004994] and it was provided by the University of California
+The dataset is called [Arrhythmia Data Set](https://bigml.com/dashboard/dataset/5c4c9b9500a1e5464c004994) and it was provided by the University of California
 Machine Learning Repository.It contains 452 data points, each with 280 distinct features.
 Each data point represents a single patient which has had measurements taken of their heart
 activity with the use of an electrocardiogram (ECG) with 6 probes placed around the patients
@@ -38,7 +38,7 @@ Lastly, the features were normalized, using sklearn.preprocessing StandardScaler
 After all of this preprocessing we end up with a dataset that look like this.
 ![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/dataset.PNG)
 
-## Creatubg the neural network model
+## Creating the neural network model
 A feed forward deep neural network was implemented for the task at hand, 
 it was created using Keras running on top of Tensorflow.
 Since we are implementing a deep neural network we already know we need at least two hidden layers of neurons.
@@ -51,7 +51,7 @@ Another densely connected layer has been added to represent the output of the ne
 has one node which will represent the probability of arrhythmia. The closer the value is to “0”,
 the more likely the patient is healthy, the closer it is to “1” the more likely the patient has some
 underlying heart problems.
-The Adagrad optimizer was used as well as the Binary Cross Entropy loss fucntion.
+The [Adagrad optimize]() was used as well as the [Binary Cross Entropy]() loss fucntion.
 
 ## Training the neural network
 Note that the number of hidden neurons has not been specified so far, this is due to the fact that this project
@@ -64,3 +64,26 @@ axis representing the number of neurons in the first hidden layer, the Y axis re
 number of hidden neurons in the second layer and the Z axis representing either accuracy or loss.
 The batch size was set to 5 with 5 epochs of training.
 The following figures show the results of training.
+![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_acc_big.png)![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/train_loss_big.png)
+As can be observed in Fig1. the training accuracy increases exponentially with small numbers of
+neurons and then plateaus as we reach the a number as high as the number of input neurons.
+In the same fashion we can observe that the training losses decrease with an increase in hidden
+layer neurons, which is what we are looking for.
+The testing of these models can be seen in the next figure.
+![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_acc_big.png)!![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_loss_big.png)!
+
+The following is the generated log for the final model with 262 input neurons, 300 neurons in the
+first hidden layer, 220 neurons in the second hidden layer and one output, batch size of 32,
+epoch count 10.
+![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/data.PNG)!
+The final result for this run was a test accuracy of 74% with 99% training accuracy.
+The final 4 lines in the log represent some random predictions from the test data, on the left side
+having the real solution answers and the right being the model predictions.
+
+## Conclusion
+Although the model acted as intended it was unable to reach testing accuracies higher than
+80% and there was no real way to improve this. I suspect this is due to the fact that the dataset
+had a relatively small number of datapoints, with a much larger dataset the model could reach a
+higher testing accuracy and even possibly be able to categorize the different types of
+arrhythmias. It is also possible that the missing values in the dataset have inserted a bias in the
+model.
