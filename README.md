@@ -5,7 +5,7 @@ This project focuses on the training of deep neural networks for the detection o
 containing parameters of [QRS complexes](https://en.wikipedia.org/wiki/QRS_complex) taken from electrocardiograms 
 probes from various healthy and unhealthy individuals.
 The dataset is called [Arrhythmia Data Set](https://bigml.com/dashboard/dataset/5c4c9b9500a1e5464c004994) and it was provided by the University of California
-Machine Learning Repository.It contains 452 data points, each with 280 distinct features.
+Machine Learning Repository. It contains 452 data points, each with 280 distinct features.
 Each data point represents a single patient which has had measurements taken of their heart
 activity with the use of an electrocardiogram (ECG) with 6 probes placed around the patients
 chest. These probes are used to measure the QRS complex for the respective patient, which is
@@ -73,7 +73,10 @@ neurons and then plateaus as we reach the a number as high as the number of inpu
 In the same fashion we can observe that the training losses decrease with an increase in hidden
 layer neurons, which is what we are looking for.
 The testing of these models can be seen in the next figure.
-![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_acc_big.png)!![alt text](https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_loss_big.png)!
+<p float="left">
+  <img src="https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_acc_big.png" width="400" />
+  <img src="https://github.com/JustCallMeRob/deep-learning-arrhythmia-detection/blob/master/test_loss_big.png" width="400" /> 
+</p>
 
 The following is the generated log for the final model with 262 input neurons, 300 neurons in the
 first hidden layer, 220 neurons in the second hidden layer and one output, batch size of 32,
