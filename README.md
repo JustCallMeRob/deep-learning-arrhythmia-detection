@@ -56,7 +56,7 @@ The [Adagrad optimize](https://www.wikipedia.com/en/Stochastic_gradient_descent#
 
 ## Training the neural network
 Note that the number of hidden neurons has not been specified so far, this is due to the fact that this project
-also tests to see what comfiguration of neurons in the hidden layer is the most optimal for the task at hand. This is achieved
+also tests to see what configuration of neurons in the hidden layer is the most optimal for the task at hand. This is achieved
 by training and testing various number of neural network comfigurations.
 As an example, a number of neurons between 20 and 300 was tested, with step size of 20 neurons. This
 resulted in training a total of 225 different combinations of neurons for the first and second
